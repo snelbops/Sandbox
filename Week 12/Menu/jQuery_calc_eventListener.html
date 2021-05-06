@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- <input type="checkbox" id='item0' value="9.99"  onclick="UpdateCost()">Item 1 ( 9.99)<br>
+    <input type="checkbox" id='item1' value="19.99" onclick="UpdateCost()">Item 2 (19.99)<br>
+    <input type="checkbox" id='item2' value="27.50" onclick="UpdateCost()">Item 3 (27.50)<br>
+    <input type="checkbox" id='item3' value="45.65" onclick="UpdateCost()">Item 4 (45.65)<br>
+    <input type="checkbox" id='item4' value="87.20" onclick="UpdateCost()">Item 5 (87.20)<br> -->
+    <input type="checkbox" id='item0' value="9.99"  >Item 1 ( 9.99)<br>
+    <input type="checkbox" id='item1' value="19.99" >Item 2 (19.99)<br>
+    <input type="checkbox" id='item2' value="27.50" >Item 3 (27.50)<br>
+    <input type="checkbox" id='item3' value="45.65" >Item 4 (45.65)<br>
+    <input type="checkbox" id='item4' value="87.20" >Item 5 (87.20)<br>
+    <textarea name="" id="totalcost" cols="30" rows="5"></textarea>
+
+
+    <script type="text/javascript">
+        function UpdateCost() {
+            var sum = 0;
+            var item, el;
+            for (i = 0; i < 5; i++) {
+                item = 'item' + i;
+                el = document.getElementById(item);
+                if (el.checked == true) {
+                    sum += Number(el.value);
+                }
+            }
+            document.getElementById('totalcost').value = sum.toFixed(2);
+        }
+
+        document.querySelectorAll('[id^="item"]').forEach(item => {
+            item.addEventListener('click', UpdateCost);
+        });
+    </script>
+</body>
+
+</html>
