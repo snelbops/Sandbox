@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector All</title>
+</head>
+<body>
+    <h2>querySelectorAll example</h2>
+
+    <!-- Box -->
+    <div class="box">Box1</div>
+    <div class="box">Box2</div>
+    <div class="box">Box3</div>
+
+    <!-- Unordered Lists -->
+    <ul id="list1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ul id="list2"> 
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    
+
+    <script>
+        //Box
+        const boxes = document.querySelectorAll('.box');
+        console.log(boxes)
+        console.log(boxes[0].className)
+
+        boxes.forEach((e) => {
+            //e is a single box
+            e.style.color = 'red';
+        })
+
+        // Unordered List Items
+        const items = document.querySelectorAll('li');
+        console.log(items);
+
+        // Unordered List Items: List2
+        const list2 = document.querySelector('#list2');
+        const list2_items = list2.querySelectorAll('li');
+        console.log(list2_items);
+
+        list2_items.forEach((e) => {
+            e.style.color = "red";
+        })
+
+    </script>
+</body>
+</html>
